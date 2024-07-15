@@ -1,28 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CSC205
+public class Program
 {
-    internal class Program
+    public static void Main(String[] args)
     {
-        static void Main(string[] args)
+        //int[] a = new int[4];
+        //int[] a = new int[4] { 1, 2, 3, 4 };
+        int[] a = { 1, 2, 3, 4 };
+
+        foreach (int i in a)
         {
-            // int x = 8;
-            // int y = 5;
-            int x = 8, y = 5;
-            Console.WriteLine((x >= y) && (x < 10));
-
-            double pi = 3.14159;
-            int p = (int)pi;
-            double q = Math.Round(pi * 20.0);
-            Console.WriteLine(p);
-            Console.WriteLine(q);
-
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+            Console.WriteLine(i);
         }
     }
+
 }
+
