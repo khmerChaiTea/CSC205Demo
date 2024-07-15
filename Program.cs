@@ -12,6 +12,12 @@ public class Program
         {
             Console.WriteLine(i);
         }
+
+        int[] b = a;
+        foreach (int i in b)
+        {
+            Console.WriteLine(i);
+        }
     }
 
 }
