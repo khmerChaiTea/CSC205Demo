@@ -2,29 +2,22 @@
 
 public class Program
 {
+    // Used static variable
+    static int a2 = 1;
     public static void Main(String[] args)
     {
-        // Initialized array
-        int[] a = { 1, 2, 3, 4 };
-        // Output the array a
-        Console.WriteLine("before:");
-        foreach (int i in a) Console.WriteLine(i);
-        // Modify array a
-        ModifyArray(a);
-        // Output a new array calling method ModifyArray()
-        Console.WriteLine("after");
-        foreach (int i in a) Console.WriteLine(i);
+        int a2 = 1;
+        Console.WriteLine(a2);  // Output 1
+        // no parameter or arguement to pass
+        ModifyNumber();
+        Console.WriteLine(a2);  // Output 1
     }
 
-
-    // Passby reference
-    public static void ModifyArray(int[] b)
+    static void ModifyNumber()
     {
-        for (int i = 0; i < b.Length; i++)
-        {
-            // Value of the array increased by one
-            b[i]++;
-        }
+        // Take the global
+        a2++;
+        Console.WriteLine(a2);  // Output 2
     }
 }
 
