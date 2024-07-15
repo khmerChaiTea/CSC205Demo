@@ -7,13 +7,14 @@ public class Program
     public static void Main(String[] args)
     {
         // Generate and display 10 random 
-        // integers between 0 and 100
-        Random rnd = new Random();
-        for (int i = 0; i <= 10; i++)
+        // floating numbers between 0 and 1.0 
+        Random random = new Random();
+        for (int i = 0; i < 10; i++)
         {
-            Console.WriteLine(rnd.Next(0, 101));
-
+            double x = random.NextDouble();
+            Console.WriteLine(x);
         }
+
     }
 }
 
