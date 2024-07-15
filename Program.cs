@@ -11,7 +11,7 @@ public class Program
         Random random = new Random();
         for (int i = 0; i < 10; i++)
         {
-            double x = random.NextDouble();
+            double x = random.NextDouble() * 10;
             Console.WriteLine(x);
         }
 
