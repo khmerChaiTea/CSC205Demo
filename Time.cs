@@ -27,5 +27,10 @@ namespace CSC205
             this.minute = minute;
             this.second = second;
         }
+
+        public override string ToString()
+        {
+            return this.hour + ":" + this.minute + ":" + this.second;
+        }
     }
 }
