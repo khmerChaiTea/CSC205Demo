@@ -6,13 +6,14 @@ public class Program
     static int a2 = 1;
     public static void Main(String[] args)
     {
-        Random random = new Random();
-        int n1 = random.Next();
-        int n2 = random.Next(101);
-        int dice = random.Next(1, 7);
-        Console.WriteLine(n1);
-        Console.WriteLine(n2);
-        Console.WriteLine(dice);
+        // Generate and display 10 random 
+        // integers between 0 and 100
+        Random rnd = new Random();
+        for (int i = 0; i <= 10; i++)
+        {
+            Console.WriteLine(rnd.Next(0, 101));
+
+        }
     }
 }
 
