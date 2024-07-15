@@ -4,22 +4,25 @@ public class Program
 {
     public static void Main(String[] args)
     {
+        // Initialized array
         int[] a = { 1, 2, 3, 4 };
-        //int[] b = a;
-        int[] b = new int[a.Length];
-        for (int i = 0; i < a.Length; i++)
-        {
-            b[i] = a[i];
-        }
-
-        b[0] = 5;
-
-        Console.WriteLine("array a:");
+        // Output the array a
+        Console.WriteLine("before:");
         foreach (int i in a) Console.WriteLine(i);
-
-        Console.WriteLine("array b:");
-        foreach (int i in b) Console.WriteLine(i);
+        // Modify array a
+        ModifyArray(a);
+        // Output a new array calling method ModifyArray()
+        Console.WriteLine("after");
+        foreach (int i in a) Console.WriteLine(i);
     }
 
+    public static void ModifyArray(int[] b)
+    {
+        for (int i = 0; i < b.Length; i++)
+        {
+            // Value of the array increased by one
+            b[i]++;
+        }
+    }
 }
 
