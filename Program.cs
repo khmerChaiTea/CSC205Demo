@@ -5,29 +5,23 @@ namespace ThinkSharp
     {
         public static void Main(string[] args)
         {
-            int[] scores = RandomArray(20);
+            int[] scores = RandomArray(30);
+            // Print output of n(30) amount of random number from method RandomArray
             WriteArray(scores);
-            int a = InRange(scores, 90, 100);
-            int b = InRange(scores, 80, 90);
-            int c = InRange(scores, 70, 80);
-            int d = InRange(scores, 60, 70);
-            int f = InRange(scores, 0, 60);
-            Console.WriteLine($"{a}, {b}, {c}, {d}, {f}");
-        }
-
-        public static int InRange(int[] array, int low, int high)
-        {
-            int count = 0;
-            foreach (int item in array)
+            int[] counts = new int[100];
+            for (int i = 0; i < scores.Length; i++)
             {
-                if (item >= low && item < high)
-                {
-                    count++;
-                }
+                /* 
+                // look at index if the value equal index count it
+                int index = scores[i];
+                // Imcrement count of value in array
+                counts[index]++;
+                */
+                counts[scores[i]]++;
             }
-            return count;
+            // Output the count of number in the array
+            WriteArray(counts);
         }
-
         public static int[] RandomArray(int size)
         {
             Random random = new Random();
@@ -38,7 +32,6 @@ namespace ThinkSharp
             }
             return array;
         }
-
         public static void WriteArray(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
@@ -48,4 +41,3 @@ namespace ThinkSharp
         }
     }
 }
-
