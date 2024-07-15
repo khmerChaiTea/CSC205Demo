@@ -16,6 +16,8 @@ public class Program
         foreach (int i in a) Console.WriteLine(i);
     }
 
+
+    // Passby reference
     public static void ModifyArray(int[] b)
     {
         for (int i = 0; i < b.Length; i++)
