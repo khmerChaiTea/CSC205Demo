@@ -1,6 +1,6 @@
 ﻿using System;
 
-// version 4
+// version 5 – private fields
 public class Program
 {
     static void Main(string[] args)
@@ -14,8 +14,8 @@ public class Program
 
 abstract class Person
 { // Parent class
-    public string name;
-    public int age;
+    private string name;
+    private int age;
     public Person(string name, int age)
     {
         this.name = name;
@@ -26,7 +26,7 @@ abstract class Person
 }
 class Teacher : Person
 { // Child class
-    public string subject;
+    private string subject;
     public Teacher(string name, int age, string subject) : base(name, age)
     { this.subject = subject; }
     public void DisplayTeacher()
@@ -37,7 +37,7 @@ class Teacher : Person
 }
 class Student : Person
 { // Child class
-    public double gpa;
+    private double gpa;
     public Student(string name, int age, double gpa) : base(name, age)
     { this.gpa = gpa; }
     public void DisplayStudent()
