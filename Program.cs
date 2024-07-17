@@ -1,14 +1,14 @@
 ﻿using System;
 
-// version 5 – private fields
+// version 6 - polymorphism
 public class Program
 {
     static void Main(string[] args)
     {
         Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-        teacher.DisplayTeacher();
+        teacher.DisplayInfo();
         Student student = new Student("Sara", 19, 3.5);
-        student.DisplayStudent();
+        student.DisplayInfo();
     }
 }
 
@@ -29,7 +29,7 @@ class Teacher : Person
     private string subject;
     public Teacher(string name, int age, string subject) : base(name, age)
     { this.subject = subject; }
-    public void DisplayTeacher()
+    public void DisplayInfo()
     {
         base.DisplayNameAge();
         System.Console.WriteLine($"Teaches {subject}\n");
@@ -40,7 +40,7 @@ class Student : Person
     private double gpa;
     public Student(string name, int age, double gpa) : base(name, age)
     { this.gpa = gpa; }
-    public void DisplayStudent()
+    public void DisplayInfo()
     {
         base.DisplayNameAge();
         System.Console.WriteLine($"GPA: {this.gpa}");
