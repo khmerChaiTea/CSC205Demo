@@ -12,7 +12,7 @@ namespace CSC205
         public double second;
 
         // Here is an example for the Time Class:
-        // This code below is the comstructor (default)
+        // This code below is the constructor (default)
         public Time()
         {
             // We drop 'this.'
