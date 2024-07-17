@@ -21,6 +21,13 @@ namespace CSC205
             second = 3.0;
         }
 
+        public Time(int hour, int minute)
+        {
+            this.hour = hour;
+            this.minute = minute;
+            this.second = 1.0;
+        }
+
         public Time(int hour, int minute, double second)
         {
             this.hour = hour;
@@ -31,6 +38,21 @@ namespace CSC205
         public override string ToString()
         {
             return this.hour + ":" + this.minute + ":" + this.second;
+        }
+
+        public void WriteTime()
+        {
+            Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
+        }
+
+        public void WriteTime2(Time t)
+        {
+            Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
+        }
+
+        public static void WriteTime(Time t)
+        {
+            Console.WriteLine(t.hour + ":" + t.minute + ":" + t.second);
         }
     }
 }
