@@ -1,11 +1,11 @@
 ﻿using System;
 
-// version 2
+// version 3
 public class Program
 {
     static void Main(string[] args)
     {
-        Person person = new Person("Allan", 21);
+        //Person person = new Person("Allan", 21);
         Teacher teacher = new Teacher("Tom", 55, "Computer Science");
         teacher.DisplayNameAge();
         Student student = new Student("Sara", 19, 3.5);
@@ -13,7 +13,7 @@ public class Program
     }
 }
 
-class Person // Parent class
+abstract class Person // Parent class cannot be instantiated
 {
     public string name;
     public int age;
