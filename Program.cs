@@ -1,22 +1,25 @@
 ﻿using System;
-
-namespace CSC205
+public class Book
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            Time t1 = new Time();
-            Time t2 = new Time(1, 19);
+    public string title;
+    public string isbn;
+    public double price;
+}
 
-            Time t3 = new Time(3, 50, 23);
-            Console.WriteLine(t3);
-            Console.WriteLine(t3.ToString());
-            t3.WriteTime();
-            t3.WriteTime2(t3);  // Instance method
-            t2.WriteTime2(t3);
-            t1.WriteTime2(t3);  // Best if passing a time to another
-            Time.WriteTime(t3);
-        }
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book();
+        book1.title = "C# 9 and .NET 5";
+        book1.isbn = "180056810X";
+        book1.price = 42.74;
+        Console.WriteLine(book1.title);
+
+        Book book2 = new Book();
+        book2.title = "C# in Depth";
+        book2.isbn = "1617294535";
+        book2.price = 38.99;
+        Console.WriteLine(book2.title);
     }
 }
