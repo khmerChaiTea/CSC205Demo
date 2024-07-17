@@ -1,6 +1,6 @@
 ﻿using System;
 
-// version 6 - polymorphism
+// version 7 – Properties
 public class Program
 {
     static void Main(string[] args)
@@ -8,6 +8,8 @@ public class Program
         Teacher teacher = new Teacher("Tom", 55, "Computer Science");
         teacher.DisplayInfo();
         Student student = new Student("Sara", 19, 3.5);
+        student.DisplayInfo();
+        student.Gpa = 3.8;
         student.DisplayInfo();
     }
 }
@@ -38,8 +40,9 @@ class Teacher : Person
 class Student : Person
 { // Child class
     private double gpa;
+    public double Gpa { get { return gpa; } set { gpa = value; } } // Just a Property example
     public Student(string name, int age, double gpa) : base(name, age)
-    { this.gpa = gpa; }
+    { this.gpa = 3.5; }
     public void DisplayInfo()
     {
         base.DisplayNameAge();
