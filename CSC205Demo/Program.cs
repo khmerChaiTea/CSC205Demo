@@ -1,66 +1,18 @@
 ﻿using System;
-namespace ThinkSharp
+public static class StaticClass
 {
-    // version 7 – Properties
-    public class Program
+    public static string staticStr = "A static variable (or data member)";
+    public static void StaticMethod()
     {
-        static void Main(string[] args)
-        {
-            Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-            teacher.DisplayInfo();
-            Student student = new Student("Sara", 19, 3.5);
-            student.DisplayInfo();
-            student.Gpa = 3.8;
-            student.DisplayInfo();
-        }
+        Console.WriteLine(staticStr);
     }
-
-    abstract class Person
-    { // Parent class
-        private string name;
-        private int age;
-        public Person(string name, int age)
-        {
-            this.name = name;
-            this.age = age;
-        }
-        public void DisplayNameAge()
-        { System.Console.WriteLine($"Name：{name}, Age: {age}"); }
-    }
-    class Teacher : Person
-    { // Child class
-        private string subject;
-        public Teacher(string name, int age, string subject) : base(name, age)
-        { this.subject = subject; }
-        public void DisplayInfo()
-        {
-            base.DisplayNameAge();
-            System.Console.WriteLine($"Teaches {subject}\n");
-        }
-    }
-    class Student : Person
-    { // Child class
-        private double gpa;
-        // Use property, renamed to Gpa
-        // Getter, Setter properties
-        public double Gpa
-        {
-            get
-            {
-                return gpa;
-            }
-            set
-            {
-                gpa = value;
-            }
-        } // Just a Property example
-
-        public Student(string name, int age, double gpa) : base(name, age)
-        { this.gpa = 3.5; }
-        public void DisplayInfo()
-        {
-            base.DisplayNameAge();
-            System.Console.WriteLine($"GPA: {this.gpa}");
-        }
+}
+public class Program
+{
+    static void Main(string[] args)
+    {
+        // StaticClass sc = new StaticClass(); // can’t be instantiated!
+        Console.WriteLine(StaticClass.staticStr);
+        StaticClass.StaticMethod();
     }
 }
