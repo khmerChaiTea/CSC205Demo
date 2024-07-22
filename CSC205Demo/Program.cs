@@ -1,21 +1,25 @@
 ﻿using System;
-public class NonStaticClass
+public class Automobile
 {
-    // public string staticStr = "A non-static variable (or data member)";
-    public string Str {  get; set; }
-    public void NonStaticMethod()
+    public static int NumberOfWheels = 4;
+    public static int SizeOfGasTank
     {
-        Console.WriteLine(Str);
+        get { return 15; } // SizeOfGasTank is C# property
     }
+    public static void Drive()
+    {
+        Console.WriteLine("I'm driving!");
+    }
+    // Other non-static fields and properties...
 }
 public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        //NonStaticClass sc = new NonStaticClass();
-        NonStaticClass sc = new NonStaticClass { Str = "I'm a property!" };
-        Console.WriteLine(sc.Str);
-        sc.Str = "I have changed!";
-        sc.NonStaticMethod();
+        Automobile.Drive();
+        Console.WriteLine(Automobile.NumberOfWheels);
+        var car = new Automobile();
+        Console.WriteLine(Automobile.SizeOfGasTank);
+        // car.Drive() does not work
     }
 }
