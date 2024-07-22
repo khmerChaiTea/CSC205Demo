@@ -12,8 +12,10 @@ public class Program
 {
     static void Main(string[] args)
     {
-        NonStaticClass sc = new NonStaticClass(); // can be instantiated!
+        //NonStaticClass sc = new NonStaticClass();
+        NonStaticClass sc = new NonStaticClass { Str = "I'm a property!" };
         Console.WriteLine(sc.Str);
+        sc.Str = "I have changed!";
         sc.NonStaticMethod();
     }
 }
