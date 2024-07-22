@@ -1,15 +1,16 @@
 ﻿using System;
 namespace ThinkSharp
 {
-    // version 4
+    // version 5
     public class Program
     {
         static void Main(string[] args)
         {
-            Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-            teacher.DisplayTeacher();
-            Student student = new Student("Sara", 19, 3.5);
-            student.DisplayStudent();
+            Teacher p1 = new Teacher("Tom", 55, "Computer Science");
+            Student p2 = new Student("Sara", 19, 3.5);
+            p1.DisplayInfo();
+            p2.DisplayInfo();
+
         }
     }
 
@@ -30,9 +31,9 @@ namespace ThinkSharp
         public string subject;
         public Teacher(string name, int age, string subject) : base(name, age)
         { this.subject = subject; }
-        public void DisplayTeacher()
+        public void DisplayInfo()
         {
-            base.DisplayNameAge();  // Can keep base or drop it
+            base.DisplayNameAge();
             System.Console.WriteLine($"Teaches {subject}\n");
         }
     }
@@ -41,7 +42,7 @@ namespace ThinkSharp
         public double gpa;
         public Student(string name, int age, double gpa) : base(name, age)
         { this.gpa = gpa; }
-        public void DisplayStudent()
+        public void DisplayInfo()
         {
             base.DisplayNameAge();
             System.Console.WriteLine($"GPA: {this.gpa}");
