@@ -20,6 +20,7 @@ public class App
         Console.WriteLine($"{c3.instances} instance(s) of the Counter class!");
         Counter c4 = new Counter();
         Console.WriteLine($"{c4.instances} instance(s) of the Counter class!");
+        Console.WriteLine($"{c0.instances} instance(s) of the Counter class!");
     }
 }
 
