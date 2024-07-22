@@ -1,8 +1,8 @@
 ﻿using System;
-public static class StaticClass
+public class NonStaticClass
 {
-    public static string staticStr = "A static variable (or data member)";
-    public static void StaticMethod()
+    public string staticStr = "A non-static variable (or data member)";
+    public void NonStaticMethod()
     {
         Console.WriteLine(staticStr);
     }
@@ -11,8 +11,12 @@ public class Program
 {
     static void Main(string[] args)
     {
-        // StaticClass sc = new StaticClass(); // can’t be instantiated!
-        Console.WriteLine(StaticClass.staticStr);
-        StaticClass.StaticMethod();
+        NonStaticClass sc = new NonStaticClass(); // can be instantiated!
+        Console.WriteLine(sc.staticStr);
+        sc.NonStaticMethod();
+
+        NonStaticClass sc2 = new NonStaticClass(); // can be instantiated!
+        Console.WriteLine(sc.staticStr);
+        sc.NonStaticMethod();
     }
 }
