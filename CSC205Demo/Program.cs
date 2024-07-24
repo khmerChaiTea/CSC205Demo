@@ -1,22 +1,30 @@
 ﻿using System;
-
-abstract class Shape
+namespace CSC205
 {
-    public abstract int GetArea();
-}
-
-class Square : Shape
-{
-    private int _side;
-
-    public Square(int n) => _side = n;
-
-    // GetArea method is required to avoid a compile-time error.
-    public override int GetArea() => _side * _side;
-
-    static void Main()
+    internal class Point
     {
-        var sq = new Square(12);
-        Console.WriteLine($"Area of the square = {sq.GetArea()}");
+        public int x, y;
+        public Point(int x, int y)
+        {
+            this.x = x; this.y = y;
+        }
+
+        public override string ToString()
+        {
+            return $"({x}, {y})";
+        }
     }
-} // Output: Area of the square = 144
+
+    public sealed class App
+    {
+        static void Main()
+        {
+            var p1 = new Point(1, 2);
+            var p2 = p1;
+            var p3 = new Point(1, 2);
+            Console.WriteLine(p1.Equals(p2));
+            Console.WriteLine(p1.Equals(p3));
+            Console.WriteLine($"p1's value is: {p1.ToString()}");
+        }
+    }
+}
