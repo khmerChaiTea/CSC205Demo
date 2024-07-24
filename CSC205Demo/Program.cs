@@ -2,11 +2,6 @@
 
 abstract class Shape
 {
-    //public virtual int GetArea()
-    //{
-    //    return 1;
-    //}
-
     public abstract int GetArea();
 }
 
