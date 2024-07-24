@@ -9,6 +9,15 @@ namespace CSC205
             this.x = x; this.y = y;
         }
 
+        // remove (by commenting out) the following Equals method to see if the result is different
+        public override bool Equals(object obj)
+        {   // If this and obj do not refer to the same type, then they are not equal.
+            if (obj.GetType() != this.GetType()) return false;
+            // Return true if x and y fields match.
+            var other = (Point)obj;
+            return (this.x == other.x) && (this.y == other.y);
+        }
+
         public override string ToString()
         {
             return $"({x}, {y})";
