@@ -21,11 +21,12 @@ class Rectangle : Shape
     private int _length;
     private int _width;
 
-    public Rectangle(int l, int w)
-    {
-        _length = l;
-        _width = w;
-    }
+    public Rectangle(int l, int w) => (_length, _width) = (l, w);
+    //public Rectangle(int l, int w)
+    //{
+    //    _length = l;
+    //    _width = w;
+    //}
 
     // GetArea method is required to avoid a compile-time error.
     public override int GetArea() => _length * _width;
