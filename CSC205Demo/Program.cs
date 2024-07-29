@@ -36,10 +36,11 @@ class App
 {
     static void Main()
     {
-        Shape sq = new Square(12);
-        Console.WriteLine($"Area of the square = {sq.GetArea()}");
+        Shape[] shapes = { new Square(5), new Rectangle(3, 4) };
+        //Shape sq = new Square(12);
+        Console.WriteLine($"Area of the square = {shapes[0].GetArea()}");
 
-        Shape rect = new Rectangle(5, 7);
-        Console.WriteLine($"Area of the rectangle = {rect.GetArea()}");
+        //Shape rect = new Rectangle(5, 7);
+        Console.WriteLine($"Area of the rectangle = {shapes[1].GetArea()}");
     }
 }
