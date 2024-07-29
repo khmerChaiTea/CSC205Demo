@@ -1,39 +1,27 @@
 ﻿using System;
-namespace CSC205
+public struct Book // change class to struct to see the difference
 {
-    internal class Point
+    public string title, isbn;
+    public double price;
+}
+public class Program
+{
+    public static void Main(string[] args)
     {
-        public int x, y;
-        public Point(int x, int y)
-        {
-            this.x = x; this.y = y;
-        }
+        Book book1 = new Book();
+        book1.title = "Think Sharp";
+        book1.isbn = "N/A";
+        book1.price = 0.0;
+        Console.WriteLine($"title: {book1.title}, ISBN: {book1.isbn}, Price: {book1.price}");
 
-        // remove (by commenting out) the following Equals method to see if the result is different
-        public override bool Equals(object obj)
-        {   // If this and obj do not refer to the same type, then they are not equal.
-            if (obj.GetType() != this.GetType()) return false;
-            // Return true if x and y fields match.
-            var other = (Point)obj;
-            return (this.x == other.x) && (this.y == other.y);
-        }
+        Book book2 = book1;
+        Console.WriteLine($"title: {book2.title}, ISBN: {book2.isbn}, Price: {book2.price}");
 
-        public override string ToString()
-        {
-            return $"({x}, {y})";
-        }
-    }
+        book2.title = "The C# Player's Guide";
+        book2.isbn = "978-0985580155";
+        book2.price = 34.95;
 
-    public sealed class App
-    {
-        static void Main()
-        {
-            var p1 = new Point(1, 2);
-            var p2 = p1;
-            var p3 = new Point(1, 2);
-            Console.WriteLine(p1.Equals(p2));
-            Console.WriteLine(p1.Equals(p3));
-            Console.WriteLine($"p1's value is: {p1.ToString()}");
-        }
+        Console.WriteLine($"title: {book1.title}, ISBN: {book1.isbn}, Price: {book1.price}");
+        Console.WriteLine($"title: {book2.title}, ISBN: {book2.isbn}, Price: {book2.price}");
     }
 }
