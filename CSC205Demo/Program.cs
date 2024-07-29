@@ -1,5 +1,5 @@
 ﻿using System;
-public struct Book // change struct to class to see the difference
+public class Book // change struct to class to see the difference
 {
     public string title, isbn;
     public double price;
