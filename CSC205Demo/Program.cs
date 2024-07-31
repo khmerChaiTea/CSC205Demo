@@ -2,25 +2,11 @@
 
 class TestClass
 {
-    public class Shape
+    public abstract class Shape
     {
         public const double PI = Math.PI;
-        //protected double _x, _y;
-        //public Shape(double x, double y)
-        //{
-        //    _x = x;
-        //    _y = y;
-        //}
-        public virtual double Area()
-        {
-            return 0;
-        }
 
-        /*
-         * The virtual keyword is used to modify a method, property, etc. ,
-         * and allow for it to be overridden in a derived class. By default,
-         * methods are non-virtual. You cannot override a non-virtual method.
-         */
+        public abstract double Area();
     }
     public class Circle : Shape
     {
@@ -38,8 +24,7 @@ class TestClass
     }
     public class Cylinder : Shape
     {
-        private double r;
-        private double h;
+        private double r, h;
         public Cylinder(double r, double h)
         {
             this.r = r;
