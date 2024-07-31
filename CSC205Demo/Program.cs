@@ -6,7 +6,7 @@ class TestClass
     {
         public const double PI = Math.PI;
 
-        public abstract double Area();
+        public abstract double Area();  // class must be abstract
     }
     public class Circle : Shape
     {
