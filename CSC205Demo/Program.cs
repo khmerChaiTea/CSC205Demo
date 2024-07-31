@@ -1,57 +1,45 @@
 ﻿using System;
 
-abstract class Shape
+class TestClass
 {
-    public abstract int GetArea();
-}
+    public class Shape
+    {
+        public const double PI = Math.PI;
+        protected double _x, _y;
+        public Shape(double x, double y)
+        {
+            _x = x;
+            _y = y;
+        }
+        public virtual double Area()
+        {
+            return _x * _y;
+        }
+    }
+    public class Circle : Shape
+    {
+        public Circle(double r) : base(r, 0) { }
 
-class Square : Shape
-{
-    private int _side;
-
-    public Square(int n) => _side = n;
-
-    // GetArea method is required to avoid a compile-time error.
-    public override int GetArea() => _side * _side;
-}
-// Output: Area of the square = 144z
-
-class Rectangle : Shape
-{
-    private int _length;
-    private int _width;
-
-    public Rectangle(int l, int w) => (_length, _width) = (l, w);
-    //public Rectangle(int l, int w)
-    //{
-    //    _length = l;
-    //    _width = w;
-    //}
-
-    // GetArea method is required to avoid a compile-time error.
-    public override int GetArea() => _length * _width;
-}
-
-class App
-{
+        public override double Area()
+        {
+            return PI * _x * _x;
+        }
+    }
+    public class Cylinder : Shape
+    {
+        public Cylinder(double r, double h) : base(r, h) { }
+        public override double Area()
+        {
+            return 2 * PI * _x * _x + 2 * PI * _x * _y;
+        }
+    }
     static void Main()
     {
-        //Shape[] shapes = { new Square(5), new Rectangle(3, 4) };
-        Object[] shapes = { new Square(5), new Rectangle(3, 4) };
-        //Shape sq = new Square(12);
-        //Console.WriteLine($"Area of the square = {shapes[0].GetArea()}");
-        Console.WriteLine($"Area of the square = {((Shape)shapes[0]).GetArea()}");
-        /*
-         * shapes[0]: This accesses the first element in the array, which is an instance of Square.
-         * (Shape)shapes[0]: This casts the object at shapes[0] to the Shape type.
-         * Since Square is a subclass of Shape, this cast is valid.
-         * ((Shape)shapes[0]).GetArea(): This calls the GetArea method on the cast object.
-         * If GetArea is a virtual or abstract method defined in the Shape class
-         * and overridden in the Square class, the correct method implementation
-         * will be invoked for the Square instance.
-        */
-
-        //Shape rect = new Rectangle(5, 7);
-        //Console.WriteLine($"Area of the rectangle = {shapes[1].GetArea()}");
+        double r = 3.0, h = 5.0;
+        Shape c = new Circle(r);
+        Shape l = new Cylinder(r, h);
+        // Display results.
+        Console.WriteLine("Area of Circle   = {0:F2}", c.Area());
+        Console.WriteLine("Area of Cylinder = {0:F2}", l.Area());
     }
 }
