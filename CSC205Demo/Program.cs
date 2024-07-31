@@ -1,18 +1,20 @@
 ﻿using System;
-public class Cat
-{
-    // Auto-implemented properties.
-    public int Age { get; set; }
-    public string Name { get; set; }
+public enum Season
+{ //names of enum members
+    Spring,
+    Summer,
+    Autumn,
+    Winter
 }
-class Program
+public class EnumConversionExample
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Cat cat = new Cat { Age = 10, Name = "Fluffy" };
-        Cat sameSameCat = new Cat();
-
-        Console.WriteLine($"cat name: {cat.Name}, cat age: {cat.Age}");
-        Console.WriteLine($"cat name: {sameSameCat.Name}, cat age: {sameSameCat.Age}");
+        Season a = Season.Autumn;
+        Console.WriteLine($"Integral value of {a} is {(int)a}");
+        var b = (Season)1;
+        Console.WriteLine(b);  // output: Summer
+        var c = (Season)4;
+        Console.WriteLine(c);  // output: 4
     }
 }
