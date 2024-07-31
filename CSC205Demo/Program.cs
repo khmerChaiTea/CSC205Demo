@@ -5,15 +5,15 @@ class TestClass
     public class Shape
     {
         public const double PI = Math.PI;
-        protected double _x, _y;
-        public Shape(double x, double y)
-        {
-            _x = x;
-            _y = y;
-        }
+        //protected double _x, _y;
+        //public Shape(double x, double y)
+        //{
+        //    _x = x;
+        //    _y = y;
+        //}
         public virtual double Area()
         {
-            return _x * _y;
+            return 0;
         }
 
         /*
@@ -24,23 +24,33 @@ class TestClass
     }
     public class Circle : Shape
     {
-        public Circle(double r) : base(r, 0) { }
+        private double r;
+        public Circle(double r)
+        {
+            this.r = r;
+        }
 
         public override double Area()
         {
-            return PI * _x * _x;
+            return PI * r * r;
         }
         // A = PI * r^2
     }
     public class Cylinder : Shape
     {
-        public Cylinder(double r, double h) : base(r, h) { }
+        private double r;
+        private double h;
+        public Cylinder(double r, double h)
+        {
+            this.r = r;
+            this.h = h;
+        }
         public override double Area()
         {
-            return 2 * PI * _x * _x + 2 * PI * _x * _y;
+            return 2 * PI * r * r + 2 * PI * r * h;
         }
         // V = PI * r^2 * h; V = Volume
-        // Total Surface Area; Atotal = Alateral + Abases = 2 * PI * r^2 + 2 * PI * r * h
+        // Total Surface Area; A(total) = A(lateral) + A(bases) = 2 * PI * r^2 + 2 * PI * r * h
     }
     static void Main()
     {
