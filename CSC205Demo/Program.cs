@@ -14,11 +14,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Pig myPig = new Pig();  // Create a Pig object
-        myPig.animalSound();
+        IAnimal[] pets= {new Pig(), new Dog()}; // Polymorphism
+        pets[0].animalSound();
+        pets[1].animalSound();
 
-        Dog myDog = new Dog();  // Create a Pig object
-        myDog.animalSound();
+        //Pig myPig = new Pig();  // Create a Pig object
+        //myPig.animalSound();
+
+        //Dog myDog = new Dog();  // Create a dog object
+        //myDog.animalSound();
     }
 }
 
