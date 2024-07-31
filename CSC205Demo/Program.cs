@@ -1,36 +1,22 @@
 ﻿using System;
-
-interface IPoint
+public class Cat
 {
-    // Property signatures:
-    int X { get; set; }
-    int Y { get; set; }
-    double Distance { get; }
-}
-class Point : IPoint
-{
-    public Point(int x, int y)
-    { // Constructor:
-        X = x;
-        Y = y;
-    }
-    // Property implementation:
-    public int X { get; set; }
-    public int Y { get; set; }
-    public double Distance =>
-       Math.Sqrt(X * X + Y * Y);
-}
-class MainClass
-{
-    static void PrintPoint(IPoint p)
+    // Auto-implemented properties.
+    public int Age { get; set; }
+    public string Name { get; set; }
+    public Cat() { }
+    public Cat(string name)
     {
-        Console.WriteLine("x={0}, y={1}", p.X, p.Y);
-    }
-    static void Main()
-    {
-        IPoint p = new Point(2, 3);
-        Console.Write("My Point: ");
-        PrintPoint(p);
+        this.Name = name;
     }
 }
-// Output: My Point: x=2, y=3
+class Program
+{
+    static void Main(string[] args)
+    {
+        Cat cat = new Cat { Age = 10, Name = "Fluffy" };
+        Cat sameCat = new Cat("Fluffy") { Age = 10 };
+        Console.WriteLine($"cat name: {cat.Name}, cat age: {cat.Age}");
+        Console.WriteLine($"cat name: {sameCat.Name}, cat age: {sameCat.Age}");
+    }
+}
