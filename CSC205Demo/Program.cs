@@ -1,35 +1,36 @@
 ﻿using System;
-interface IAnimal // Interface
+
+interface IPoint
 {
-    void animalSound(); // interface method (empty body)
+    // Property signatures:
+    int X { get; set; }
+    int Y { get; set; }
+    double Distance { get; }
 }
-class Pig : IAnimal
-{  // Pig "implements" the IAnimal interface
-    public void animalSound()
+class Point : IPoint
+{
+    public Point(int x, int y)
+    { // Constructor:
+        X = x;
+        Y = y;
+    }
+    // Property implementation:
+    public int X { get; set; }
+    public int Y { get; set; }
+    public double Distance =>
+       Math.Sqrt(X * X + Y * Y);
+}
+class MainClass
+{
+    static void PrintPoint(IPoint p)
     {
-        Console.WriteLine("The pig says: wee wee");
+        Console.WriteLine("x={0}, y={1}", p.X, p.Y);
+    }
+    static void Main()
+    {
+        IPoint p = new Point(2, 3);
+        Console.Write("My Point: ");
+        PrintPoint(p);
     }
 }
-class Program
-{
-    static void Main(string[] args)
-    {
-        IAnimal[] pets= {new Pig(), new Dog()}; // Polymorphism
-        pets[0].animalSound();
-        pets[1].animalSound();
-
-        //Pig myPig = new Pig();  // Create a Pig object
-        //myPig.animalSound();
-
-        //Dog myDog = new Dog();  // Create a dog object
-        //myDog.animalSound();
-    }
-}
-
-class Dog : IAnimal
-{
-    public void animalSound()
-    {
-        Console.WriteLine("The dog says: ruff ruff");
-    }
-}
+// Output: My Point: x=2, y=3
