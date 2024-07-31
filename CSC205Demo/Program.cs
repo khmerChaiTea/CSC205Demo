@@ -1,26 +1,20 @@
 ﻿using System;
-
-interface ISampleInterface //good practice to start with an "I"
+interface IAnimal // Interface
 {
-    void SampleMethod();
+    void animalSound(); // interface method (empty body)
 }
-
-class ImplementationClass : ISampleInterface
-{
-    // Explicit interface member implementation:
-    void ISampleInterface.SampleMethod()
+class Pig : IAnimal
+{  // Pig "implements" the IAnimal interface
+    public void animalSound()
     {
-        Console.WriteLine("I'm an implementation of interface method!");
+        Console.WriteLine("The pig says: wee wee");
     }
-
-    static void Main()
+}
+class Program
+{
+    static void Main(string[] args)
     {
-        // Declare an interface instance.
-        //ISampleInterface obj = new ImplementationClass();
-        var obj = new ImplementationClass();
-
-        // Call the member.
-        //obj.SampleMethod();
-        ((ISampleInterface)obj).SampleMethod();
+        Pig myPig = new Pig();  // Create a Pig object
+        myPig.animalSound();
     }
 }
