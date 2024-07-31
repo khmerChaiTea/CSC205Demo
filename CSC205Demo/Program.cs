@@ -15,6 +15,12 @@ class TestClass
         {
             return _x * _y;
         }
+
+        /*
+         * The virtual keyword is used to modify a method, property, etc. ,
+         * and allow for it to be overridden in a derived class. By default,
+         * methods are non-virtual. You cannot override a non-virtual method.
+         */
     }
     public class Circle : Shape
     {
@@ -24,6 +30,7 @@ class TestClass
         {
             return PI * _x * _x;
         }
+        // A = PI * r^2
     }
     public class Cylinder : Shape
     {
@@ -32,6 +39,8 @@ class TestClass
         {
             return 2 * PI * _x * _x + 2 * PI * _x * _y;
         }
+        // V = PI * r^2 * h; V = Volume
+        // Total Surface Area; Atotal = Alateral + Abases = 2 * PI * r^2 + 2 * PI * r * h
     }
     static void Main()
     {
