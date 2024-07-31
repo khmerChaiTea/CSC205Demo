@@ -16,9 +16,11 @@ class ImplementationClass : ISampleInterface
     static void Main()
     {
         // Declare an interface instance.
-        ISampleInterface obj = new ImplementationClass();
+        //ISampleInterface obj = new ImplementationClass();
+        var obj = new ImplementationClass();
 
         // Call the member.
-        obj.SampleMethod();
+        //obj.SampleMethod();
+        ((ISampleInterface)obj).SampleMethod();
     }
 }
