@@ -4,7 +4,8 @@ public enum Season
     Spring,
     Summer,
     Autumn,
-    Winter
+    Winter,
+    Other
 }
 public class EnumConversionExample
 {
@@ -15,7 +16,7 @@ public class EnumConversionExample
         var b = (Season)1;
         Console.WriteLine(b);  // output: Summer
         var c = (Season)4;
-        Console.WriteLine(c);  // output: 4
+        Console.WriteLine(c);  // output: 4; Other will be output if we add Other to Season
         Console.WriteLine(c.GetType());  // output: ? = Season
     }
 }
