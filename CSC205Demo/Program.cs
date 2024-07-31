@@ -16,5 +16,16 @@ class Program
     {
         Pig myPig = new Pig();  // Create a Pig object
         myPig.animalSound();
+
+        Dog myDog = new Dog();  // Create a Pig object
+        myDog.animalSound();
+    }
+}
+
+class Dog : IAnimal
+{
+    public void animalSound()
+    {
+        Console.WriteLine("The dog says: ruff ruff");
     }
 }
