@@ -16,5 +16,6 @@ public class EnumConversionExample
         Console.WriteLine(b);  // output: Summer
         var c = (Season)4;
         Console.WriteLine(c);  // output: 4
+        Console.WriteLine(c.GetType());  // output: ? = Season
     }
 }
