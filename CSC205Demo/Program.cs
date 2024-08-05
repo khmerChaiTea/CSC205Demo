@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;   // Removed Generic
 class Example
 {
     public static void Main()
     {
-        Queue<string> numbers = new Queue<string>();
+        Queue numbers = new Queue();    // Removed <String>
         numbers.Enqueue("one");
-        numbers.Enqueue("two");
+        numbers.Enqueue(2);
         numbers.Enqueue("three");
         numbers.Enqueue("four");
         // A queue can be enumerated without disturbing its contents.
-        foreach (string number in numbers)
+        // When compiled it throw error so change string to var
+        foreach (var number in numbers)
         {
             Console.WriteLine(number);
         }
@@ -18,7 +19,7 @@ class Example
         Console.WriteLine("Peek at next item to dequeue: {0}", numbers.Peek());
         Console.WriteLine("Dequeuing '{0}'", numbers.Dequeue());
         Console.WriteLine("\nItems in the queue now:");
-        foreach (string number in numbers)
+        foreach (var number in numbers)
         {
             Console.WriteLine(number);
         }
