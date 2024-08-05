@@ -2,6 +2,7 @@
 
 public class ExceptionTest
 {
+    // Do not manually throw exception for 'int'
     static double SafeDivision(double x, double y)
     {
         if (y == 0) throw new DivideByZeroException();
@@ -10,7 +11,7 @@ public class ExceptionTest
     public static void Main()
     {
         // Change the values to see exception handling behavior.
-        double a = 98, b = 2.0;
+        double a = 98, b = 0;
         double result;
 
         try
@@ -20,7 +21,7 @@ public class ExceptionTest
         }
         catch (DivideByZeroException)
         {
-            Console.WriteLine("Attempted divide by zero.");
+            Console.WriteLine("Attempted divide by zero. ---");
         }
     }
 }
