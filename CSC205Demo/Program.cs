@@ -1,24 +1,26 @@
 ﻿using System;
-public enum Color { Red, Green, Blue }
-public class Example
+
+public class ExceptionTest
 {
+    static double SafeDivision(double x, double y)
+    {
+        if (y == 0) throw new DivideByZeroException();
+        return x / y;
+    }
     public static void Main()
     {
-        Color c = (Color)(new Random()).Next(0, 3);
-        switch (c)
+        // Change the values to see exception handling behavior.
+        double a = 98, b = 2.0;
+        double result;
+
+        try
         {
-            case Color.Red:
-                Console.WriteLine("The color is red");
-                break;
-            case Color.Green:
-                Console.WriteLine("The color is green");
-                break;
-            case Color.Blue:
-                Console.WriteLine("The color is blue");
-                break;
-            default:
-                Console.WriteLine("The color is unknown.");
-                break;
+            result = SafeDivision(a, b);
+            Console.WriteLine("{0} divided by {1} = {2}", a, b, result);
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Attempted divide by zero.");
         }
     }
 }
