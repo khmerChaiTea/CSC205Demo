@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 
 class Example
 {
     public static void Main()
     {
-        Stack<string> numbers = new Stack<string>();
+        var numbers = new Stack();
         numbers.Push("one");
         numbers.Push("two");
         numbers.Push("three");
 
         // A stack can be enumerated without disturbing its contents.
         Console.WriteLine("Contents of the stack:");
-        foreach (string number in numbers)
+        foreach (var number in numbers)
         {
             Console.WriteLine(number);
         }
@@ -20,7 +20,7 @@ class Example
         Console.WriteLine("Peek at next item: {0}",
             numbers.Peek()); // Peek does not remove the item
         Console.WriteLine("Contents of the stack now:");
-        foreach (string number in numbers)
+        foreach (var number in numbers)
         {
             Console.WriteLine(number);
         }
