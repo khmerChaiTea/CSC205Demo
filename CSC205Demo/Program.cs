@@ -17,16 +17,15 @@ class Example
         }
 
         var numbersStack = new Stack<string>();
-        //foreach (var number in numbers)
-        //{
-        //    numbersStack.Push(number);
-        //}
-        int count = numbers.Count;
-        for (int i = 0; i < count; i++)
+
+        //int count = numbers.Count;
+        //for (int i = 0; i < count; i++)
+        while (numbers.Count > 0)
         {
-            string number = numbers.Dequeue();
-            numbersStack.Push(number);
-            //numbersStack.Push(numbers.Dequeue());
+            //string number = numbers.Dequeue();
+            //numbersStack.Push(number);
+            Console.WriteLine("numberStack.Count: " + numbersStack.Count);
+            numbersStack.Push((numbers.Dequeue()));
         }
 
         Console.WriteLine("Contents of stack:");
