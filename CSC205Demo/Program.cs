@@ -1,27 +1,20 @@
 ﻿using System;
-
-public class ExceptionTest
+public class Pair<T, U>
 {
-    // Do not manually throw exception for 'int'
-    static double SafeDivision(double x, double y)
+    public T First { get; set; }
+    public U Second { get; set; }
+    public override string ToString()
     {
-        if (y == 0) throw new DivideByZeroException();
-        return x / y;
+        return "{ " + First + ", " + Second + " }";
     }
-    public static void Main()
+}
+public class App
+{
+    static void Main()
     {
-        // Change the values to see exception handling behavior.
-        double a = 98, b = 0;
-        double result;
-
-        try
-        {
-            result = SafeDivision(a, b);
-            Console.WriteLine("{0} divided by {1} = {2}", a, b, result);
-        }
-        catch (DivideByZeroException)
-        {
-            Console.WriteLine("Attempted divide by zero. ---");
-        }
+        Pair<int, int> p1 = new Pair<int, int> { First = 5, Second = 20 };
+        Console.WriteLine(p1.ToString());
+        Pair<string, string> p2 = new Pair<string, string> { First = "Suzy", Second = "Bob" };
+        Console.WriteLine(p2.ToString());
     }
 }
