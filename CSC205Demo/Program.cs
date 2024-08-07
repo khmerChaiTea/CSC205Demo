@@ -9,7 +9,7 @@ public class Program
         salmons.Add("coho");
         salmons.Add("pink");
         salmons.Add("sockeye");
-        salmons.Remove("coho");
+        salmons.RemoveAt(3);
         // Iterate through the list.
         foreach (var salmon in salmons)
         {
