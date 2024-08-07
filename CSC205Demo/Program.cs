@@ -1,29 +1,19 @@
 ﻿using System;
-using System.Collections;
-public class SamplesArrayList
+using System.Collections.Generic;
+public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        // Creates and initializes a new ArrayList.
-        ArrayList myAL = new ArrayList();
-        for (int i = 0; i < 10; i++)
+        var salmons = new List<string>();
+        salmons.Add("chinook");
+        salmons.Add("coho");
+        salmons.Add("pink");
+        salmons.Add("sockeye");
+        salmons.Remove("coho");
+        // Iterate through the list.
+        foreach (var salmon in salmons)
         {
-            myAL.Add("Hello");
+            Console.Write(salmon + " ");
         }
-
-        //myAL.Add("World");
-        //myAL.Add("!");
-        // Displays the properties and values of the ArrayList.
-        Console.WriteLine("myAL");
-        Console.WriteLine("    Count:    {0}", myAL.Count);
-        Console.WriteLine("    Capacity: {0}", myAL.Capacity);
-        Console.Write("    Values:");
-        PrintValues(myAL);
-    }
-    public static void PrintValues(IEnumerable myList)
-    {
-        foreach (Object obj in myList)
-            Console.Write("   {0}", obj);
-        Console.WriteLine();
     }
 }
