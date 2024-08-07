@@ -6,10 +6,11 @@ public class Program
     {
         var salmons = new List<string>();
         salmons.Add("chinook");
-        salmons.Add("coho");
         salmons.Add("pink");
         salmons.Add("sockeye");
-        salmons.RemoveAt(3);
+        salmons.Add("coho");
+
+        salmons.Sort();
         // Iterate through the list.
         foreach (var salmon in salmons)
         {
